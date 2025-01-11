@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                                  /* Use ES2022 for the latest ECMAScript features */
+    "module": "NodeNext",                                 /* Use NodeNext for ES Module support */
+    "moduleResolution": "NodeNext",                        /* Node.js-style module resolution */
+    "esModuleInterop": true,                              /* Enable compatibility with CommonJS modules */
+    "strict": true,                                       /* Strict type checking */
+    "skipLibCheck": true                                  /* Skip checking .d.ts files */
+  }
+}
