@@ -1,6 +1,8 @@
 
 
-import "dotenv/config";
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import { getKeypairFromEnvironment } from "@solana-developers/helpers";
  
 const keypair1 = getKeypairFromEnvironment("SECRET_KEY");

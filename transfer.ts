@@ -1,14 +1,10 @@
-import {
-    Connection, 
-    Transaction, 
-    SystemProgram, 
-    sendAndConfirmTransaction,
-    PublicKey,
-} from "@solana/web3.js";
-import "dotenv/config";
+import { Connection, PublicKey, Keypair, Transaction, SystemProgram, sendAndConfirmTransaction } from '@solana/web3.js';
+
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import { getKeypairFromEnvironment } from "@solana-developers/helpers";
 
-console.log('just testing this works')
 
 const suppliedToPubkey = process.argv[2] || null;
 
@@ -29,23 +25,4 @@ console.log(
   `✅ Loaded our own keypair, the destination public key, and connected to Solana`,
 );
 
-const transaction = new Transaction();
- 
-const LAMPORTS_TO_SEND = 5000;
- 
-const sendSolInstruction = SystemProgram.transfer({
-  fromPubkey: senderKeypair.publicKey,
-  toPubkey,
-  lamports: LAMPORTS_TO_SEND,
-});
- 
-transaction.add(sendSolInstruction);
- 
-const signature = await sendAndConfirmTransaction(connection, transaction, [
-  senderKeypair,
-]);
- 
-console.log(
-  `💸 Finished! Sent ${LAMPORTS_TO_SEND} to the address ${toPubkey}. `,
-);
-console.log(`Transaction signature is ${signature}!`);
+
